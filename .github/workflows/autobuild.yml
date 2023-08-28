@@ -13,6 +13,10 @@ jobs:
                 node-version: 16
             - run: npm install
             - run: npm run package
+            - uses: actions/upload-artifact@v3
+              with:
+                name: windows
+                path: out
     build-windows-legacy: 
         runs-on: windows-latest
         steps:
@@ -23,3 +27,7 @@ jobs:
             - run: npm install
             - run: npm install electron@22
             - run: npm run package
+            - uses: actions/upload-artifact@v3
+              with:
+                name: windows-legacy
+                path: out
